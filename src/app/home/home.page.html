@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Sitios turísticos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+        <ion-col class="ion-align-self-center">
+        <ion-button size="small" expand="block" color="primary" fill="outline" [routerLink]="['/home']">Turismo</ion-button>
+      </ion-col>
+      <ion-col class="ion-align-self-center">
+        <ion-button size="small" expand="block" color="secondary" fill="outline" [routerLink]="['/heroes']">Heroes</ion-button>
+      </ion-col>
+      <ion-col class="ion-align-self-center">
+        <ion-button size="small" expand="block" color="tertiary" fill="outline" [routerLink]="['/sites-list']">Sitios</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card *ngFor="let site of sites">
+    <ion-card-header>
+      <ion-card-subtitle>{{ site.subtitle }}</ion-card-subtitle>
+      <ion-card-title>{{ site.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-img [src]="site.img"></ion-img>
+    <ion-card-content>
+      {{ site.description }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

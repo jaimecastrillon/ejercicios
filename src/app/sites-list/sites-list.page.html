@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sitios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-align-self-center">
+        <ion-button size="small" expand="block" color="primary" fill="outline" [routerLink]="['/home']">Turismo</ion-button>
+      </ion-col>
+      <ion-col class="ion-align-self-center">
+        <ion-button size="small" expand="block" color="secondary" fill="outline" [routerLink]="['/heroes']">Heroes</ion-button>
+      </ion-col>
+      <ion-col class="ion-align-self-center">
+        <ion-button size="small" expand="block" color="tertiary" fill="outline" [routerLink]="['/sites-list']">Sitios</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-align-self-center" size="6" *ngFor="let site of sites" (click)="showModal(site.data)">
+        <ion-card>
+          <img [src]="site.img">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Heroes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-align-self-center">
+          <ion-button size="small" expand="block" color="primary" fill="outline" [routerLink]="['/home']">Turismo</ion-button>
+        </ion-col>
+        <ion-col class="ion-align-self-center">
+          <ion-button size="small" expand="block" color="secondary" fill="outline" [routerLink]="['/heroes']">Heroes</ion-button>
+        </ion-col>
+        <ion-col class="ion-align-self-center">
+            <ion-button size="small" expand="block" color="tertiary" fill="outline" [routerLink]="['/sites-list']">Sitios</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>
+          <h1>{{ heroes.squadName }}</h1>
+          <h2>{{ heroes.homeTown }}</h2>
+          <h3>{{ heroes.secretBase }}</h3>
+          <h3>{{ heroes.formed }}</h3>
+        </ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let heroe of filterAge(heroes.members)">
+        <ion-label>
+          <ion-text color="primary">
+            <h2>{{heroe.secretIdentity}}</h2>
+            <h3>{{heroe.name}}</h3>
+          </ion-text>
+          <ion-text color="secondary">
+            <h4>Age: {{heroe.age}}</h4>
+          </ion-text>
+          <ion-text color="secondary">
+              <h4>Powers:</h4>
+              <ul>
+                  <li *ngFor="let power of heroe.powers">
+                      {{power}}
+                  </li>
+                </ul>
+            </ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  
+    
+  </ion-content>
